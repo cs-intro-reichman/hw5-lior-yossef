@@ -43,10 +43,11 @@ public class MyString {
     public static boolean subsetOf(String str1, String str2) {
         for (int i = 0; i < str1.length(); i++) {
             char ch = str1.charAt(i);
-            if (str2.indexOf(ch) == -1) {
+            int index = str2.indexOf(ch);
+            if (index == -1) {
                 return false;
             }
-            str2 = str2.substring(0, str2.indexOf(ch)) + str2.substring(str2.indexOf(ch));
+            str2 = str2.substring(0, index) + str2.substring(index + 1);
         }
 
         return true;
