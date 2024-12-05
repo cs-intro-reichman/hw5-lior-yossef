@@ -48,7 +48,6 @@ public class Scrabble {
 
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
-		System.out.println("isWordInDictionary start " + word);
 		if (word == null) {
 			return false;
 		}
