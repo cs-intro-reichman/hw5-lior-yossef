@@ -66,9 +66,9 @@ public class Scrabble {
 			char ch = word.charAt(i);
 			score += SCRABBLE_LETTER_VALUES[ch - 97];
 		}
-		
+
 		score *= word.length();
-		score += MyString.subsetOf(word, "runi") ? 1000 : 0;
+		score += MyString.subsetOf("runi", word) ? 1000 : 0;
 
 		return score;
 	}
