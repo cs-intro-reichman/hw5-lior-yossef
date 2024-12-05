@@ -48,6 +48,7 @@ public class Scrabble {
 
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
+		System.out.println("isWordInDictionary start " + word);
 		if (word == null) {
 			return false;
 		}
@@ -110,6 +111,17 @@ public class Scrabble {
 			if (input.equals(".")) {
 				break;
 			}
+
+			if (isWordInDictionary(input)) {
+				if (MyString.subsetOf(input, hand)) {
+					hand = MyString.remove(hand, input);
+					int wordScore = wordScore(input);
+					score += wordScore;
+					System.out.println(input + " earned " + wordScore + " points. Score: " + score + " points");
+				}
+			} else {
+				System.out.println("No such word in the dictionary. Try again.");
+			}
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
@@ -146,7 +158,7 @@ public class Scrabble {
 		////testScrabbleScore();    
 		////testCreateHands();  
 		////testPlayHands();
-		////playGame();
+		playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
