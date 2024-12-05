@@ -104,14 +104,15 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2
      */
     public static String remove(String str1, String str2) {
-        String newStr = "";
-
         for (int i = 0; i < str1.length(); i++) {
             char ch = str1.charAt(i);
-            newStr += countChar(str2, ch) == 0 ? ch : "";
+            int index = str2.indexOf(ch);
+            if (index != -1) {
+                str2 = str2.substring(0, index) + str2.substring(index + 1);
+            }
         }
 
-        return newStr;
+        return str2;
     }
 
     /**
