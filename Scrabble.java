@@ -116,10 +116,10 @@ public class Scrabble {
 					hand = MyString.remove(hand, input);
 					int wordScore = wordScore(input);
 					score += wordScore;
-					// System.out.println(input + " earned " + wordScore + " points. Score: " + score + " points");
+					System.out.println(input + " earned " + wordScore + " points. Score: " + score + " points\n");
 				}
 			} else {
-				// System.out.println("No such word in the dictionary. Try again.");
+				System.out.println("Invalid word. Try again.");
 			}
 		}
 		if (hand.length() == 0) {
@@ -157,7 +157,7 @@ public class Scrabble {
 		////testScrabbleScore();    
 		////testCreateHands();  
 		////testPlayHands();
-		playGame();
+		// playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
